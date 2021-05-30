@@ -1,0 +1,8 @@
+.vscode/
+out/
+run/
+build/
+.idea/
+*.iml
+*.ipr
+*.iws

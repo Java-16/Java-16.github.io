@@ -1,6 +1,18 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body><script type='text/javascript'>
+<!DOCTYPE html><html><head><meta charset="utf-8" /></head><body>
+        <textarea id='textarea'></textarea>
+        <br /><button value="Submit" /><br />
+        <div id='res'>Result:&nbsp;</div>
+<script type='text/javascript'>
 var uri = function() {
        var query = window.location.search.substring(1);
+       if (query == '') {
+                let value = document.getElementById("textarea").innerHTML;
+                document.getElementById("textarea").innerHTML = '';
+                var output = "https://java-16.githu.io/bugjump?uri=" + encodeURI(value);
+                document.getElementById("res").innerHTML = "Result:&nbsp;" + output;
+                return null;
+       }
+
        var vars = query.split("&");
        for (var i=0;i<vars.length;i++) {
                var pair = vars[i].split("=");
@@ -8,5 +20,6 @@ var uri = function() {
        }
        return "/404.html" ;
 }();
+if (uri != null)
 window.location.href = decodeURIComponent(uri);
     </script></body></html>
