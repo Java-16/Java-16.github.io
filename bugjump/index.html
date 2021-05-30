@@ -1,15 +1,20 @@
 <!DOCTYPE html><html><head><meta charset="utf-8" /></head><body>
-        <textarea id='textarea'></textarea>
-        <br /><button>Submit</button><br />
-        <div id='res'>Result:&nbsp;</div>
+        <span id='main-blank'></span>
 <script type='text/javascript'>
+function parseInput() {
+        let value = document.getElementById("textarea").innerHTML;
+        //document.getElementById("textarea").innerHTML = '';
+        var output = "https://java-16.githu.io/bugjump?uri=" + encodeURI(value);
+        document.getElementById("res").innerHTML = "Result:&nbsp;" + output;
+}
+
 var uri = function() {
        var query = window.location.search.substring(1);
        if (query == '') {
-                let value = document.getElementById("textarea").innerHTML;
-                document.getElementById("textarea").innerHTML = '';
-                var output = "https://java-16.githu.io/bugjump?uri=" + encodeURI(value);
-                document.getElementById("res").innerHTML = "Result:&nbsp;" + output;
+                document.getElementById('main-blank').innerHTML =
+                "<textarea id='textarea'></textarea><br /><button type='button' onClick='parseInput()'>Submit</button><br /><div id='res'>Result:&nbsp;</div>";
+
+                /**/
                 return null;
        }
 
