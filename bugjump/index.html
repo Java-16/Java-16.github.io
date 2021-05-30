@@ -2,7 +2,7 @@
         <span id='main-blank'></span>
 <script type='text/javascript'>
 function parseInput() {
-        let value = document.getElementById("textarea").innerHTML;
+        let value = document.getElementById("textarea").value;
         //document.getElementById("textarea").innerHTML = '';
         var output = "https://java-16.githu.io/bugjump?uri=" + encodeURI(value);
         document.getElementById("res").innerHTML = "Result:&nbsp;" + output;
